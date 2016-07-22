@@ -189,7 +189,7 @@ int main(int argc, const char * argv[]) {
         
         
         sinus = 5*sin(i) + 3*sin(2*i) + (0.5)*sin(3*i);
-        cosinus = 5*cos(i) + 3*cos(2*i) + (0.5)*cos(3*i);
+      //  cosinus = 5*cos(i) + 3*cos(2*i) + (0.5)*cos(3*i);
         
         
         
@@ -202,10 +202,10 @@ int main(int argc, const char * argv[]) {
         F3 = F3 + sinus*sin(3*Ui);
         F4 = F4 + sinus*sin(4*Ui);
         
-        U1 = U1 + cosinus*cos(Ui);
-        U2 = U2 + cosinus*cos(2*Ui);
-        U3 = U3 + cosinus*cos(3*Ui);
-        U4 = U4 + cosinus*cos(4*Ui);
+        U1 = U1 + sinus*cos(Ui);
+        U2 = U2 + sinus*cos(2*Ui);
+        U3 = U3 + sinus*cos(3*Ui);
+        U4 = U4 + sinus*cos(4*Ui);
         
         //cout << count << " - " << S << " / " << sinus << endl;
         
@@ -216,11 +216,11 @@ int main(int argc, const char * argv[]) {
         
         X_vvod << S << endl; // заполнение файла X_obr.csv действительных x-значений
         
-        Y_cos_vvod << cosinus << endl; // заполнение файла Y_obr.csv мнимых y-значений
+        Y_cos_vvod << sinus << endl; // заполнение файла Y_obr.csv мнимых y-значений
         
         //cout << x << endl << y << endl;
         
-        cout << endl << F1 << endl << F2 << endl << F3 << endl << F4 << endl << endl;
+        //cout << endl << F1 << endl << F2 << endl << F3 << endl << F4 << endl << endl;
         
         
 
@@ -251,8 +251,8 @@ int main(int argc, const char * argv[]) {
             
             j++;
             
-            printf("%f",f_x);
-            cout << endl;
+           // printf("%f",f_x);
+           // cout << endl;
         }
         
     }
@@ -277,31 +277,31 @@ int main(int argc, const char * argv[]) {
             
             p++;
             
-            printf("%f",f_y_cos);
-            cout << endl;
+          //  printf("%f",f_y);
+          //  cout << endl;
         }
     }
     
-    while (!Y_cos_read.eof()) {
-        Y_cos_read >> vvod_y_cos;
-        //counter++;
-        //cout << vvod << endl;
-        
-        
-        for (int k = 0; k < 1; k++) {
-            
-            str1 = &vvod_y_cos[k];
-            
-            f_y_cos = atof(str1);
-            
-            y_cos[u] = f_y_cos; // заполнение массива данных
-            
-            u++;
-            
-            printf("%f",f_y);
-            cout << endl;
-        }
-    }
+//    while (!Y_read.eof()) {
+//        Y_read >> vvod_y_cos;
+//        //counter++;
+//        //cout << vvod << endl;
+//        
+//        
+//        for (int k = 0; k < 1; k++) {
+//            
+//            str1 = &vvod_y_cos[k];
+//            
+//            f_y_cos = atof(str1);
+//            
+//            y_cos[u] = f_y_cos; // заполнение массива данных
+//            
+//            u++;
+//            
+//            printf("%f",f_y_cos);
+//            cout << endl;
+//        }
+//    }
 
     
     
@@ -320,17 +320,19 @@ int main(int argc, const char * argv[]) {
         f3 = f3 + y[t]*sin(3*x[t]);
         f4 = f4 + y[t]*sin(4*x[t]);
         
-        cout << t << endl;
+       // cout << t << endl;
         
     }
     
     for (int a = 0; a<201; a++) {
         
-        u1 = u1 + y_cos[a]*cos(x[a]);
-        u2 = u2 + y_cos[a]*cos(2*x[a]);
-        u3 = u3 + y_cos[a]*cos(3*x[a]);
-        u4 = u4 + y_cos[a]*cos(4*x[a]);
-
+        u1 = u1 + y[a]*cos(x[a]);
+        u2 = u2 + y[a]*cos(2*x[a]);
+        u3 = u3 + y[a]*cos(3*x[a]);
+        u4 = u4 + y[a]*cos(4*x[a]);
+        
+       // cout << a << endl;
+        
     }
     
     // сумма кратных 200 действительных
@@ -371,15 +373,20 @@ int main(int argc, const char * argv[]) {
     Sum3 = f3_200+u3_200;
     Sum4 = f4_200+u4_200;
     
-   // cout << endl << F1_200 << endl << F2_200 << endl << F3_200 << endl << F4_200 << endl << endl;
+    cout << "действительные" << endl;
+    
+   cout << endl << F1_200 << endl << F2_200 << endl << F3_200 << endl << F4_200 << endl << endl;
     
     cout << endl << f1_200 << endl << f2_200 << endl << f3_200 << endl << f4_200 << endl << endl;
     
+    cout << "мнимые" << endl;
     
-    //cout << endl << U1_200 << endl << U2_200 << endl << U3_200 << endl << U4_200 << endl << endl;
+    cout << endl << U1_200 << endl << U2_200 << endl << U3_200 << endl << U4_200 << endl << endl;
     
     cout << endl << u1_200 << endl << u2_200 << endl << u3_200 << endl << u4_200 << endl << endl;
     
+    
+    cout << "Фурье" << endl << endl;
 
     cout << Sqrt1 << endl << Sqrt2 << endl << Sqrt3 << endl << Sqrt4 << endl;
     
