@@ -357,11 +357,19 @@ int main(int argc, const char * argv[]) {
     U3_200 = U3/200;
     U4_200 = U4/200;
     
+    // квадратные корни для преобразований Фурье
+    
     Sqrt1 = sqrt(f1_200*f1_200 + u1_200*u1_200);
     Sqrt2 = sqrt(f2_200*f2_200 + u2_200*u2_200);
     Sqrt3 = sqrt(f3_200*f3_200 + u3_200*u3_200);
     Sqrt4 = sqrt(f4_200*f4_200 + u4_200*u4_200);
     
+    // суммы действительных и мнимых значенией
+    
+    Sum1 = f1_200+u1_200;
+    Sum2 = f2_200+u2_200;
+    Sum3 = f3_200+u3_200;
+    Sum4 = f4_200+u4_200;
     
    // cout << endl << F1_200 << endl << F2_200 << endl << F3_200 << endl << F4_200 << endl << endl;
     
@@ -374,6 +382,8 @@ int main(int argc, const char * argv[]) {
     
 
     cout << Sqrt1 << endl << Sqrt2 << endl << Sqrt3 << endl << Sqrt4 << endl;
+    
+    //cout << endl << Sum1 << endl << Sum2 << endl << Sum3 << endl << Sum4 << endl;
     
     
     return 0;
