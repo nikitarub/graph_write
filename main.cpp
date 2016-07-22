@@ -120,6 +120,14 @@ int main(int argc, const char * argv[]) {
     
     // --------------------
     
+    // корни
+    
+    double Sqrt1 = 0;
+    double Sqrt2 = 0;
+    double Sqrt3 = 0;
+    double Sqrt4 = 0;
+
+    // суммы
     
     double Sum1 = 0;
     double Sum2 = 0;
@@ -349,10 +357,10 @@ int main(int argc, const char * argv[]) {
     U3_200 = U3/200;
     U4_200 = U4/200;
     
-    Sum1 = sqrt(f1_200*f1_200 + u1_200*u1_200);
-    Sum2 = sqrt(f2_200*f2_200 + u2_200*u2_200);
-    Sum3 = sqrt(f3_200*f3_200 + u3_200*u3_200);
-    Sum4 = sqrt(f4_200*f4_200 + u4_200*u4_200);
+    Sqrt1 = sqrt(f1_200*f1_200 + u1_200*u1_200);
+    Sqrt2 = sqrt(f2_200*f2_200 + u2_200*u2_200);
+    Sqrt3 = sqrt(f3_200*f3_200 + u3_200*u3_200);
+    Sqrt4 = sqrt(f4_200*f4_200 + u4_200*u4_200);
     
     
    // cout << endl << F1_200 << endl << F2_200 << endl << F3_200 << endl << F4_200 << endl << endl;
@@ -365,7 +373,7 @@ int main(int argc, const char * argv[]) {
     cout << endl << u1_200 << endl << u2_200 << endl << u3_200 << endl << u4_200 << endl << endl;
     
 
-    cout << Sum1 << endl << Sum2 << endl << Sum3 << endl << Sum4 << endl;
+    cout << Sqrt1 << endl << Sqrt2 << endl << Sqrt3 << endl << Sqrt4 << endl;
     
     
     return 0;
